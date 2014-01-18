@@ -1,4 +1,4 @@
-Signup::Application.routes.draw do
+RealEstateCMS::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :home, only: [:index]
   resources :dashboard, only: [:index]
