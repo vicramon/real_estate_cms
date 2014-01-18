@@ -31,3 +31,13 @@ end
 Then(/^I should see that my changes are saved$/) do
   Site.last.name.should == 'Green Forest Realty'
 end
+
+Given(/^there are 2 sites$/) do
+  @site1 = Fabricate(:site, name: 'Black Forest')
+  @site2 = Fabricate(:site, name: 'Green Forest')
+end
+
+Then(/^I should see those sites$/) do
+  expect(page).to have_content @site1.name
+  expect(page).to have_content @site2.name
+end

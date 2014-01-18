@@ -1,0 +1,10 @@
+%h1 Sites
+
+%table
+  %tr
+    %th Name
+    %th Domain
+- sites.each do |site|
+  %tr
+    %td= link_to site.name, site
+    %td= site.domain

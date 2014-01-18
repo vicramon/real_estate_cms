@@ -1,6 +1,10 @@
 = content_for :nested_layout do
   %section#super_admin
     %h1 Super Admin Dashboard
+
+    - if not_on_super_admin_dashboard
+      = link_to "&laquo; Back to dashboard".html_safe, super_admin_index_path
+
     = yield
 
 = render template: 'layouts/application'

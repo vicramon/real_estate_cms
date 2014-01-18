@@ -17,6 +17,7 @@ gem 'fabrication'
 
 group :test, :development do
   gem 'pry'
+  gem 'launchy'
 end
 
 group :development do

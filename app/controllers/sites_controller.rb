@@ -8,6 +8,8 @@ class SitesController < SuperAdminController
   end
   alias update create
 
+  def show; render :edit; end
+
   private
 
   def site_params

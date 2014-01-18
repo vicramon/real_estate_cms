@@ -1,13 +1,13 @@
 !!!
 %html
-%head
-  %title Realty Tech
-  = stylesheet_link_tag    "application"
-  = javascript_include_tag "application"
-  = csrf_meta_tags
+  %head
+    %title Realty Tech
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
 
-%body
-  - if content_for(:nested_layout)
-    = yield :nested_layout
-  - else
-    = yield
+  %body
+    - if content_for(:nested_layout)
+      = yield :nested_layout
+    - else
+      = yield
