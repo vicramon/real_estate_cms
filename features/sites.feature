@@ -18,3 +18,10 @@ Feature: Site management
     And I am signed in as a super admin
     When I follow "View Sites"
     Then I should see those sites
+
+  Scenario: Super admin deletes a site
+    Given there are 2 sites
+    And I am signed in as a super admin
+    When I follow "View Sites"
+    And I click to delete the first site
+    Then that site should be deleted

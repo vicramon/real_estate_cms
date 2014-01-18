@@ -10,6 +10,11 @@ class SitesController < SuperAdminController
 
   def show; render :edit; end
 
+  def destroy
+    site.destroy
+    redirect_to sites_path
+  end
+
   private
 
   def site_params

@@ -41,3 +41,11 @@ Then(/^I should see those sites$/) do
   expect(page).to have_content @site1.name
   expect(page).to have_content @site2.name
 end
+
+When(/^I click to delete the first site$/) do
+  all("a.delete").first.click
+end
+
+Then(/^that site should be deleted$/) do
+  page.should_not have_content @site1.name
+end
