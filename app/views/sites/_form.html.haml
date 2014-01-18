@@ -1,0 +1,13 @@
+= form_for site do |f|
+
+  %dl
+    = f.label :name, "Name:"
+    = f.text_field :name
+
+  %dl
+    = f.label :domain, "Domain:"
+    = f.text_field :domain
+
+  %dl
+    = label_tag nil
+    = f.submit

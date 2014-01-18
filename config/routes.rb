@@ -7,7 +7,11 @@ RealEstateCMS::Application.routes.draw do
   get 'sign_out', to: 'sessions#destroy', as: 'sign_out'
   get 'sign_in', to: 'sessions#new', as: 'sign_in'
 
-  resources :super_admin, only: [:index]
+  resources :super_admin, only: [:index] do
+    collection do
+      resources :sites
+    end
+  end
 
   root to: 'home#index'
 end
