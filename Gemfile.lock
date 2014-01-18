@@ -78,7 +78,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    fabrication (2.9.3)
+    fabrication (2.9.6)
     ffi (1.9.3)
     formatador (0.2.4)
     gherkin (2.12.2)
