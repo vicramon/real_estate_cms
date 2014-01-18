@@ -7,7 +7,8 @@
     = csrf_meta_tags
 
   %body
-    - if content_for(:nested_layout)
-      = yield :nested_layout
-    - else
-      = yield
+    #container
+      - if content_for(:nested_layout)
+        = yield :nested_layout
+      - else
+        = yield
