@@ -3,13 +3,49 @@
 = form_for site do |f|
 
   %dl
-    = f.label :name, "Name:"
-    = f.text_field :name
+    %dt= f.label :name, "Name:"
+    %dd= f.text_field :name
 
   %dl
-    = f.label :domain, "Domain:"
-    = f.text_field :domain
+    %dt= f.label :domain, "Domain:"
+    %dd= f.text_field :domain
 
   %dl
-    = label_tag nil
-    = f.submit
+    %dt= f.label :address, "Address:"
+    %dd= f.text_field :address
+
+  %dl
+    %dt= f.label :city, "City:"
+    %dd= f.text_field :city
+
+  %dl
+    %dt= f.label :state, "State:"
+    %dd= f.text_field :state
+
+  %dl
+    %dt= f.label :zip, "Zip:"
+    %dd= f.text_field :zip
+
+  %dl
+    %dt= f.label :phone, "Phone:"
+    %dd= f.text_field :phone
+
+  %dl
+    %dt= f.label :fax, "Fax:"
+    %dd= f.text_field :fax
+
+  %dl
+    %dt= f.label :twitter, "Twitter Handle:"
+    %dd= f.text_field :twitter
+
+  %dl
+    %dt= f.label :facebook_url, "Facebook URL:"
+    %dd= f.text_field :facebook_url
+
+  %dl
+    %dt= f.label :google_plus_url, "Google Plus URL:"
+    %dd= f.text_field :google_plus_url
+
+  %dl
+    %dt= label_tag nil
+    %dd= f.submit

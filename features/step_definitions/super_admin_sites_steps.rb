@@ -13,11 +13,20 @@ end
 When(/^I fill in and submit the site form$/) do
   fill_in "Name:", with: 'Green Forest Realty'
   fill_in "Domain:", with: 'localhost:3000'
+  fill_in "Address:", with: '1234 Maple Lane'
+  fill_in "City:", with: 'Austin'
+  fill_in "State:", with: 'TX'
+  fill_in "Zip:", with: '75205'
+  fill_in "Phone:", with: '(512) - 445 - 5555'
+  fill_in "Fax:", with: '(512) - 454 - 5555'
+  fill_in "Facebook URL:", with: 'https://www.facebook.com/pages/Longhorn-Central-Realty/245619928831057'
+  fill_in "Twitter Handle:", with: 'https://twitter.com/vicramon'
   click_submit
 end
 
 Then(/^I should see my newly created site$/) do
   page.current_path.should == edit_site_path(Site.last)
+  Site.last.name.should == 'Green Forest Realty'
 end
 
 Given(/^there is a site$/) do

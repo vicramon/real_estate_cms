@@ -1,5 +1,5 @@
 class SitesController < SuperAdminController
-  expose(:sites)
+  expose(:sites) { Site.all.order(:name) }
   expose(:site, attributes: :site_params)
 
   def create

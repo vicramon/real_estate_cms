@@ -7,10 +7,12 @@
   %tr
     %th Name
     %th Domain
+    %th City
     %th
   - sites.each do |site|
     %tr
       %td= link_to site.name, site
       %td= site.domain
+      %td= site.city
       %td= link_to "delete", site, method: :delete, class: 'delete',
         confirm: 'Are you sure you want to delete this site?'
