@@ -1,22 +1,21 @@
 !!!
 %html
   %head
-    %title= site.try(:name) || "Realty Tech"
+    %title= site.name
     = stylesheet_link_tag    "application"
+    = stylesheet_link_tag "sites/#{site.stylesheet_name}"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
   %body
-    - if site
-      %header
-        = site.name
-        %nav
-          = link_to "Home", :root
+    %header
+      = site.name
+      %nav
+        = link_to "Home", :root
 
     #container
-      %section#main
+      #main
         = yield
 
-    - if site
-      %footer
-        = site.address
+    %footer
+      = site.address

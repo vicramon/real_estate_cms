@@ -5,4 +5,5 @@ Fabricator :site do
   city 'Austin'
   state 'TX'
   zip '75205'
+  stylesheet_name 'localhost'
 end

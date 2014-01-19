@@ -1,8 +1,7 @@
 Feature: Super admin user management
 
   Scenario: Super admin creates a site admin
-    Given 1 site
-    And I am signed in as a super admin
+    Given I am signed in as a super admin
     When I follow "Users"
     And I follow "Create New User"
     And I fill out the user form
@@ -10,7 +9,6 @@ Feature: Super admin user management
 
   Scenario: Super admin edits user
     Given I am signed in as a super admin
-    And 1 site
     When I follow "Users"
     And I follow "Joe Cool"
     And I fill out the user form

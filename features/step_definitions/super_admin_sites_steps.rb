@@ -1,5 +1,6 @@
 Given(/^I am signed in as a super admin$/) do
   steps %{
+    Given 1 site
     Given there is a super admin
     When I log in with valid super admin credentials
     Then I should be on the super admin dashboard
