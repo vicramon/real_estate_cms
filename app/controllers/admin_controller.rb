@@ -1,5 +1,7 @@
 class AdminController < ApplicationController
   before_filter :require_site_admin
+  layout 'pages'
+  expose(:site) { current_site }
 
   def index
   end

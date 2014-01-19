@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     if user.super_admin?
       redirect_to super_admin_index_path
     elsif user.admin_for(site)
-      redirect_to [:dashboard, :index]
+      redirect_to admin_index_path
     else
       redirect_to :root
     end
