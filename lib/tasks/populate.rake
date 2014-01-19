@@ -3,6 +3,7 @@ namespace :db do
   desc 'populate'
   task populate: :environment do
     User.delete_all
+    Site.delete_all
 
     super_admins = [
      ['Vic', 'Ramon', 'vic@vicramon.com'],
@@ -18,6 +19,15 @@ namespace :db do
         password_confirmation: 'password',
         super_admin: true)
     end
+
+    Site.create(
+      name: 'Longhorn Central Realty',
+      domain: 'localhost',
+      address: '1234 Maple Lane',
+      city: 'Austin',
+      state: 'TX',
+      zip: '75205',
+      phone: '(512) - 445 - 5555')
 
   end
 

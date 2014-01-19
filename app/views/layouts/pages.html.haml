@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Realty Tech
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    %header
+      = site.name
+
+      %nav
+        = link_to "Home", :root
+
+    #container
+      = yield
+
+    %footer
+      = site.address
