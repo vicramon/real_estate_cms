@@ -1,14 +1,22 @@
 !!!
 %html
   %head
-    %title Realty Tech
+    %title= site.try(:name) || "Realty Tech"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
   %body
+    - if site
+      %header
+        = site.name
+        %nav
+          = link_to "Home", :root
+
     #container
-      - if content_for(:nested_layout)
-        = yield :nested_layout
-      - else
+      %section#main
         = yield
+
+    - if site
+      %footer
+        = site.address

@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   expose(:site) { current_site }
   expose(:user) { User.find_by_email(params[:email]) }
-  layout 'pages'
 
   def create
     if user && user.authenticate(params[:password])

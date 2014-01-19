@@ -1,10 +1,17 @@
-= content_for :nested_layout do
-  %section#super_admin
-    %h1 Super Admin Dashboard
+!!!
+%html
+  %head
+    %title Realty Tech
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
 
-    - if not_on_super_admin_dashboard
-      = link_to "&laquo; Back to dashboard".html_safe, super_admin_index_path
+  %body
+    #container
+      %section#super_admin
+        %h1 Super Admin Dashboard
 
-    = yield
+        - if not_on_super_admin_dashboard
+          = link_to "&laquo; Back to dashboard".html_safe, super_admin_index_path
 
-= render template: 'layouts/application'
+        = yield
