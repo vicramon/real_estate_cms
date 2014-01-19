@@ -1,20 +1,22 @@
 !!!
 %html
   %head
-    %title Realty Tech
+    %title= site.try(:name) || "Realty Tech"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
   %body
-    %header
-      = site.name
-
-      %nav
-        = link_to "Home", :root
+    - if site
+      %header
+        = site.name
+        %nav
+          = link_to "Home", :root
 
     #container
-      = yield
+      %section#main
+        = yield
 
-    %footer
-      = site.address
+    - if site
+      %footer
+        = site.address

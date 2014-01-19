@@ -6,6 +6,10 @@ Fabricator :user do
   password_confirmation 'password'
 end
 
+Fabricator :admin, from: :user do
+  admin true
+end
+
 Fabricator :super_admin, from: :user do
   super_admin true
 end

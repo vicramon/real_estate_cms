@@ -3,32 +3,32 @@
 = form_for user do |f|
 
   %dl
-    = f.label :first_name, "First Name:"
-    = f.text_field :first_name
+    %dt= f.label :first_name, "First Name:"
+    %dd= f.text_field :first_name
 
   %dl
-    = f.label :last_name, "Last Name:"
-    = f.text_field :last_name
+    %dt= f.label :last_name, "Last Name:"
+    %dd= f.text_field :last_name
 
   %dl
-    = f.label :email, "Email:"
-    = f.text_field :email
+    %dt= f.label :email, "Email:"
+    %dd= f.text_field :email
 
   %dl
-    = f.label :password, "Password:"
-    = f.text_field :password
+    %dt= f.label :password, "Password:"
+    %dd= f.text_field :password
 
   %dl
-    = f.label :site_id, "Site:"
-    = f.collection_select :site_id, sites, :id, :name
+    %dt= f.label :site_id, "Site:"
+    %dd= f.collection_select :site_id, sites, :id, :name
 
   %dl
-    = f.label :admin, "Admin:"
-    = f.check_box :admin
+    %dt= f.label :admin, "Admin:"
+    %dd= f.check_box :admin
 
   %dl
-    = f.label :super_admin, "Super Admin:"
-    = f.check_box :super_admin
+    %dt= f.label :super_admin, "Super Admin:"
+    %dd= f.check_box :super_admin
 
   %dl
     = label_tag nil

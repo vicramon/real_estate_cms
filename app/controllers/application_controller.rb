@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
 
+  private
+
+  def current_site
+    Site.find_by_domain(request.domain)
+  end
+
 end

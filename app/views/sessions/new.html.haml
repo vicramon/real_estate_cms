@@ -7,12 +7,13 @@
   = form_tag sessions_path do
 
     %dl
-      = label_tag "Email"
-      = text_field_tag :email
+      %dt= label_tag :email, "Email:"
+      %dd= text_field_tag :email
 
     %dl
-      = label_tag "Password"
-      = password_field_tag :password
+      %dt= label_tag :password, "Password:"
+      %dd= password_field_tag :password
 
     %dl
-      = submit_tag "Sign In"
+      %dt
+      %dd= submit_tag "Sign In"

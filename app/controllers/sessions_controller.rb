@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
+  expose(:site) { current_site }
   expose(:user) { User.find_by_email(params[:email]) }
+  layout 'pages'
 
   def create
     if user && user.authenticate(params[:password])
@@ -21,8 +23,10 @@ class SessionsController < ApplicationController
   def choose_redirect(user)
     if user.super_admin?
       redirect_to super_admin_index_path
-    else
+    elsif user.admin_for(site)
       redirect_to [:dashboard, :index]
+    else
+      redirect_to :root
     end
   end
 

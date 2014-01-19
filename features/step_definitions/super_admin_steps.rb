@@ -4,8 +4,8 @@ end
 
 When(/^I log in with valid super admin credentials$/) do
   visit sign_in_path
-  fill_in :email, with: @user.email
-  fill_in :password, with: 'password'
+  fill_in "Email:", with: @user.email
+  fill_in "Password:", with: 'password'
   click_button 'Sign In'
 end
 
