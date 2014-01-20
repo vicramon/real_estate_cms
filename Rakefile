@@ -3,4 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+task :default => [:spec, :cucumber]
+
 RealEstateCMS::Application.load_tasks

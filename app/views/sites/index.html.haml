@@ -15,4 +15,4 @@
       %td= site.domain
       %td= site.city
       %td= link_to "delete", site, method: :delete, class: 'delete',
-        confirm: 'Are you sure you want to delete this site?'
+        data: { confirm: 'Are you sure you want to delete this site?' }
