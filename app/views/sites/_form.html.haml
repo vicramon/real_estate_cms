@@ -51,5 +51,23 @@
     %dd= f.text_field :google_plus_url
 
   %dl
+    %dt= f.label :logo_url, "Upload a logo:"
+    %dd= f.filepicker_field :logo_url, services: ['COMPUTER'], onchange: 'showImage(event)'
+
+  %dl#logo_image
+    %dt
+    %dd= filepicker_image_tag site.logo_url
+
+  %dl
     %dt= label_tag nil
     %dd= f.submit
+
+- unless site.logo_url.present?
+  :css
+    #logo_image { display: none }
+
+:javascript
+  showImage = function(event) {
+    $('#logo_image').show()
+    $('#logo_image img').attr('src', event.fpfile.url)
+  }

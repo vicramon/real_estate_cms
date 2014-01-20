@@ -26,3 +26,11 @@ Feature: Super admin site management
     When I follow "Sites"
     And I click to delete the first site
     Then that site should be deleted
+
+  @javascript
+  Scenario: Super admin views logo image for site
+    Given there is a site
+    And I am signed in as a super admin
+    When I go to edit that site
+    Then I should see the filepicker button
+    And I should see the image on the form

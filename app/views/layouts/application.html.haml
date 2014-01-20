@@ -9,13 +9,13 @@
 
   %body
     %header
-      = site.name
-      %nav
-        = link_to "Home", :root
+      = filepicker_image_tag site.logo_url
+    %nav
+      = link_to "Home", :root
 
     #container
-      #main
-        = yield
+      = yield
 
     %footer
-      = site.address
+      #content
+        = site.address

@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
   private
 
   def current_site
-    Site.find_by_domain(request.domain)
+    if Rails.env.test?
+      Site.first
+    else
+      Site.find_by_domain(request.domain)
+    end
   end
 
 end

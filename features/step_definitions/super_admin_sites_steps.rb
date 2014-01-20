@@ -60,3 +60,12 @@ end
 Then(/^that site should be deleted$/) do
   page.should_not have_content @site1.name
 end
+
+Then(/^I should see the filepicker button$/) do
+  expect(page).to have_css "button"
+end
+
+Then(/^I should see the image on the form$/) do
+  expect(page).to have_css "dl dd " +
+    "img[src='https://www.filepicker.io/api/file/EnZTPYv5RhaLU5MCfdyL/convert?/convert?']"
+end

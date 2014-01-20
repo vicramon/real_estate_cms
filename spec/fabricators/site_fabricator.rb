@@ -6,4 +6,5 @@ Fabricator :site do
   state 'TX'
   zip '75205'
   stylesheet_name 'localhost'
+  logo_url 'https://www.filepicker.io/api/file/EnZTPYv5RhaLU5MCfdyL/convert?'
 end
