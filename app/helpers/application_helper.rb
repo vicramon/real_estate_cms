@@ -1,5 +1,12 @@
 module ApplicationHelper
 
+  def li_present(object, attribute)
+    return nil unless object.send(attribute).present?
+    content_tag('li') do
+      "#{attribute.capitalize}: #{object.send(attribute)}"
+    end
+  end
+
   def li_link_to(text, path, link_options={})
     if link_options[:exclude]
       active = request.path.exclude?(link_options.delete(:exclude).to_s)
