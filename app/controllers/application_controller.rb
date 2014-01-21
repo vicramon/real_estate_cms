@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
     if Rails.env.test?
       Site.first
     else
-      puts "DOMAIN: #{request.domain}"
       Site.find_by_domain(request.domain)
     end
   end
