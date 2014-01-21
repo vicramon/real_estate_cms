@@ -14,6 +14,7 @@ end
 When(/^I fill in and submit the site form$/) do
   fill_in "Name:", with: 'Green Forest Realty'
   fill_in "Domain:", with: 'localhost:3000'
+  fill_in "Email:", with: 'greenforest@example.com'
   fill_in "Stylesheet name:", with: 'green_forest'
   fill_in "Address:", with: '1234 Maple Lane'
   fill_in "City:", with: 'Austin'

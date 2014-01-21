@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120212827) do
+ActiveRecord::Schema.define(version: 20140121014909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140120212827) do
     t.text     "google_plus_url"
     t.string   "stylesheet_name"
     t.string   "logo_url"
+    t.string   "email"
   end
 
   create_table "users", force: true do |t|
