@@ -20,9 +20,10 @@ namespace :db do
         super_admin: true)
     end
 
+    domain = Rails.env.development? ? 'localhost' : 'herokuapp.com'
     Site.create(
       name: 'Longhorn Central Realty',
-      domain: 'localhost',
+      domain: domain,
       address: '1234 Maple Lane',
       city: 'Austin',
       state: 'TX',
