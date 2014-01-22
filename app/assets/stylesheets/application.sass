@@ -8,11 +8,12 @@ body
 li
   list-style-type: none
 
-a, a:active, a:hover, a:visited
+a
   color: #0000EE
   text-decoration: none
-  &:hover
-    text-decoration: underline
+
+a:hover
+  text-decoration: underline
 
 input[type='text'], textarea, input[type='password']
   width: 250px
@@ -21,15 +22,42 @@ input[type='text'], textarea, input[type='password']
   padding: 2px
 
 header, nav
-  width: 85%
+  width: 80%
   margin: 0 auto
 
 header
+  margin-top: 22px
+  .logo
+    padding-left: 20px
+  #social_icons
+    float: right
+    margin-top: -3px
+    a
+      margin: 0 20px 0 0
+
+nav
   margin-top: 15px
+  border-top: 1px solid #ccc
+  border-bottom: 1px solid #ccc
+  text-align: left
+  li
+    display: inline-block
+    text-align: center
+    a
+      padding: 8px 20px
+      display: inline-block
+      text-transform: uppercase
+      color: #333
+      &:hover
+        background: #BFEFFF
+        text-decoration: none
 
 #container
-  width: 85%
-  margin: 0 auto
+  width: 80%
+  margin: 20px auto 40px
+  min-height: 300px
+  .content
+    padding: 0 20px
 
   form
     padding-top: 15px
@@ -92,5 +120,19 @@ section#admin
       margin-right: 30px
 
 footer
-  background: #c5601b
-  #content
+  background: #DDDDDD
+  margin: 40px 0 0 0
+  min-height: 150px
+  .content
+    margin: 0 auto
+    padding: 20px
+    width: 80%
+    .right
+      float: right
+      padding-bottom: 20px
+      .logo
+        img
+          width: 250px
+
+.clear_both
+  clear: both

@@ -11,7 +11,12 @@
     %header
       = filepicker_image_tag site.logo_url
     %nav
-      = link_to "Home", :root
+      %li= link_to "Home", :root
+      %li= link_to "Property Search", :root
+      %li= link_to "Neighborhoods", :root
+      %li= link_to "Buyers", :root
+      %li= link_to "Sellers", :root
+      %li= link_to "About", :root
 
     #container
       = yield
