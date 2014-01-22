@@ -19,8 +19,19 @@
       %li= link_to "About", :root
 
     #container
-      = yield
+      .content
+        = yield
 
     %footer
-      #content
-        = site.address
+      .content
+        .right
+          .logo
+            = filepicker_image_tag site.logo_url
+          .info
+            = li_present site, 'phone'
+            = li_present site, 'fax'
+            = li_present site, 'email'
+            %li= site.address
+            %li= site.city_state_zip
+      .clear_both
+

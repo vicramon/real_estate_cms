@@ -24,7 +24,7 @@ namespace :db do
     Site.create(
       name: 'Blue Mountain Realty',
       domain: domain,
-      email: 'contact@bluemountainrealty.com'
+      email: 'contact@bluemountainrealty.com',
       address: '1234 Maple Lane',
       city: 'Austin',
       state: 'TX',
