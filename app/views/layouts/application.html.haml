@@ -9,7 +9,21 @@
 
   %body
     %header
-      = filepicker_image_tag site.logo_url
+
+      #social_icons
+        = link_to_if_present site.facebook_url, target: :blank do
+          = image_tag 'social/colored/facebook.png'
+
+        = link_to_if_present site.twitter_url, target: :blank do
+          = image_tag 'social/colored/twitter.png'
+
+        = link_to_if_present site.google_plus_url, target: :blank do
+          = image_tag 'social/colored/google.png'
+
+      .logo
+        = link_to :root do
+          = filepicker_image_tag site.logo_url
+
     %nav
       %li= link_to "Home", :root
       %li= link_to "Property Search", :root

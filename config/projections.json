@@ -1,0 +1,7 @@
+{
+  "app/decorators/*_decorator.rb": {
+    "command": "decorator",
+    "alternate": "spec/decorators/%s_decorator_spec.rb",
+    "template": "module %SDecorator\nend"
+  }
+}
