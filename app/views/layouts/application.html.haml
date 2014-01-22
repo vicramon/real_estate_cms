@@ -27,7 +27,10 @@
 
     #container
       .content
-        = yield
+        - if content_for(:nested)
+          = yield(:nested)
+        - else
+          = yield
 
     %footer
       .content
@@ -51,4 +54,3 @@
           %li= link_to "About", :root
 
       .clear_both
-

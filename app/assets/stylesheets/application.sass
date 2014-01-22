@@ -71,54 +71,6 @@ nav#top
         display: inline-block
         padding-right: 3px
 
-section#super_admin
-
-  form
-    padding-top: 15px
-    dl
-      padding-bottom: 12px
-      dt, dd
-        display: inline-block
-      dt
-        width: 140px
-        text-align: right
-        display: inline-block
-        padding-right: 3px
-  h1
-    font-size: 24px
-  h2
-    font-size: 22px
-  .create_new
-    float: right
-    a
-      background: blue
-      padding: 10px 30px
-      color: white
-      &:hover
-        text-decoration: none
-        background: navy
-  table
-    min-width: 300px
-    text-align: left
-    tr
-      td
-        min-width: 80px
-        padding-right: 20px
-
-section#admin
-  padding-top: 15px
-  header
-    h1
-      font-size: 24px
-    a
-      float: right
-
-  nav
-    margin-top: 15px
-    li
-      display: inline-block
-      margin-right: 30px
-
 footer
   background: #DDDDDD
   margin: 40px 0 0 0
@@ -146,3 +98,61 @@ footer
 
 .clear_both
   clear: both
+
+section#admin
+  header
+    h1
+      font-size: 24px
+    a
+      float: right
+
+  nav
+    margin-top: 15px
+    li
+      display: inline-block
+      margin-right: 30px
+      a
+        padding: 5px 20px
+        &:hover
+          background: #BFEFFF
+          color: #333
+          text-decoration: none
+    li.active a
+      background: #BFEFFF
+      color: #333
+
+  .create_new
+    float: right
+    a
+      font-weight: bold
+      background: #36D900
+      padding: 10px 30px
+      color: #333
+      &:hover
+        text-decoration: none
+
+  .admin_content
+    margin-top: 15px
+    h2
+      font-size: 19px
+      margin-bottom: 8px
+
+    form
+      padding-top: 15px
+      dl
+        padding-bottom: 12px
+        dt, dd
+          display: inline-block
+        dt
+          width: 140px
+          text-align: right
+          display: inline-block
+          padding-right: 3px
+
+    table
+      min-width: 300px
+      text-align: left
+      tr
+        td
+          min-width: 80px
+          padding-right: 20px

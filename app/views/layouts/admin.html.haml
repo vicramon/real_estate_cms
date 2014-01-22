@@ -1,0 +1,15 @@
+= content_for :nested do
+  %section#admin
+    %header
+      = link_to "Sign out", sign_out_path
+      %h1 Admin Dashboard
+
+    %nav
+      = li_link_to "Pages", admin_pages_path
+      = li_link_to "Agents", :root
+      = li_link_to "Settings", :root
+
+    .admin_content
+      = yield
+
+= render template: 'layouts/application'

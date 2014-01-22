@@ -14,8 +14,7 @@ RealEstateCMS::Application.routes.draw do
     end
   end
 
-  resources :admin
-
+  resources :admin, only: [:index]
   namespace :admin do
     resources :pages
   end
