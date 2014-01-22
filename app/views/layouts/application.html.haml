@@ -11,14 +11,7 @@
     %header
 
       #social_icons
-        = link_to_if_present site.facebook_url, target: :blank do
-          = image_tag 'social/colored/facebook.png'
-
-        = link_to_if_present site.twitter_url, target: :blank do
-          = image_tag 'social/colored/twitter.png'
-
-        = link_to_if_present site.google_plus_url, target: :blank do
-          = image_tag 'social/colored/google.png'
+        = render 'pages/social_icons'
 
       .logo
         = link_to :root do
