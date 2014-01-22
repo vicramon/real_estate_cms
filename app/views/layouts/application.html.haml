@@ -24,7 +24,7 @@
         = link_to :root do
           = filepicker_image_tag site.logo_url
 
-    %nav
+    %nav#top
       %li= link_to "Home", :root
       %li= link_to "Property Search", :root
       %li= link_to "Neighborhoods", :root
@@ -38,6 +38,7 @@
 
     %footer
       .content
+
         .right
           .logo
             = filepicker_image_tag site.logo_url
@@ -47,5 +48,14 @@
             = li_present site, 'email'
             %li= site.address
             %li= site.city_state_zip
+
+        %nav
+          %li= link_to "Home", :root
+          %li= link_to "Property Search", :root
+          %li= link_to "Neighborhoods", :root
+          %li= link_to "Buyers", :root
+          %li= link_to "Sellers", :root
+          %li= link_to "About", :root
+
       .clear_both
 
