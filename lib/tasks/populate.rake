@@ -30,6 +30,9 @@ namespace :db do
       city: 'Austin',
       state: 'TX',
       zip: '75205',
+      facebook_url: 'https://www.facebook.com/pages/Longhorn-Central-Realty/245619928831057',
+      twitter: 'vicramon',
+      google_plus_url: 'https://plus.google.com/+VicRamon/',
       logo_url: 'https://www.filepicker.io/api/file/gDdFoNg0T4GuU8ZHWRxP/convert?',
       phone: '(512) - 445 - 5555')
 
