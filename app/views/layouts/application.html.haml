@@ -18,12 +18,8 @@
           = filepicker_image_tag site.logo_url
 
     %nav#top
-      %li= link_to "Home", :root
-      %li= link_to "Property Search", :root
-      %li= link_to "Neighborhoods", :root
-      %li= link_to "Buyers", :root
-      %li= link_to "Sellers", :root
-      %li= link_to "About", :root
+      - site.ordered_pages.each do |page|
+        %li= link_to page.name, page
 
     #container
       .content
@@ -46,11 +42,7 @@
             %li= site.city_state_zip
 
         %nav
-          %li= link_to "Home", :root
-          %li= link_to "Property Search", :root
-          %li= link_to "Neighborhoods", :root
-          %li= link_to "Buyers", :root
-          %li= link_to "Sellers", :root
-          %li= link_to "About", :root
+          - site.ordered_pages.each do |page|
+            %li= link_to page.name, page
 
       .clear_both

@@ -4,6 +4,7 @@ namespace :db do
   task populate: :environment do
     User.delete_all
     Site.delete_all
+    Page.delete_all
 
     super_admins = [
      ['Vic', 'Ramon', 'vic@vicramon.com'],
@@ -21,7 +22,7 @@ namespace :db do
     end
 
     domain = Rails.env.development? ? 'localhost' : 'herokuapp.com'
-    Site.create(
+    @site = Site.create(
       name: 'Blue Mountain Realty',
       domain: domain,
       email: 'contact@bluemountainrealty.com',
@@ -29,7 +30,24 @@ namespace :db do
       city: 'Austin',
       state: 'TX',
       zip: '75205',
+      logo_url: 'https://www.filepicker.io/api/file/gDdFoNg0T4GuU8ZHWRxP/convert?',
       phone: '(512) - 445 - 5555')
+
+    pages = ['Home',
+             'Neighborhoods',
+             'Property Search',
+             'Buyers',
+             'Sellers',
+             'About']
+
+    pages.each_with_index do |name, index|
+      Page.create(
+        name: name,
+        site: @site,
+        position: index
+      )
+
+    end
 
   end
 

@@ -19,6 +19,8 @@ RealEstateCMS::Application.routes.draw do
     resources :pages
   end
 
+  resources :pages, only: [:show]
+
   root to: 'pages#index'
 
 end
