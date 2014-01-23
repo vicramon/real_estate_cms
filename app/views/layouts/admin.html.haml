@@ -1,15 +1,26 @@
-= content_for :nested do
-  %section#admin
+!!!
+%html
+  %head
+    %title #{site.name} | Admin
+    = stylesheet_link_tag    "admin"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
     %header
-      = link_to "Sign out", sign_out_path
-      %h1 Admin Dashboard
+      %h1
+        = site.name
+        .grey Admin
 
     %nav
       = li_link_to "Pages", admin_pages_path
-      = li_link_to "Agents", :root
-      = li_link_to "Settings", :root
+      = li_link_to "Agents", '#'
+      = li_link_to "Settings", '#'
+      = li_link_to "View Site", :root
+      = li_link_to "Sign Out", sign_out_path
 
-    .admin_content
-      = yield
-
-= render template: 'layouts/application'
+    #container
+      .content
+        %section#admin
+          .admin_content
+            = yield
