@@ -1,8 +1,3 @@
-Given(/^I am a site admin$/) do
-  @site = Fabricate(:site)
-  @user = Fabricate(:admin, site: @site)
-end
-
 When(/^I visit the sign in path for my site$/) do
   visit '/admin'
 end

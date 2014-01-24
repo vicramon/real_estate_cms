@@ -27,3 +27,12 @@ Feature: Admin manages pages
     When I follow "Pages"
     And I click to delete the first page
     Then I should see that my page is deleted
+
+  Scenario: Admin reorders pages
+    Given I am signed in as an admin
+    And I have 2 pages
+    When I follow "Pages"
+    And I follow "Reorder Pages"
+    And I drag my second page above the first
+    And I submit the form
+    Then I should see that my pages are reordered

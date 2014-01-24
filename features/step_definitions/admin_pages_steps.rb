@@ -7,8 +7,8 @@ Given(/^I am signed in as an admin$/) do
 end
 
 Given(/^I have 2 pages$/) do
-  Fabricate(:page, name: "Home", site: @site)
-  Fabricate(:page, name: "About", site: @site)
+  @page1 = Fabricate(:page, name: "Home", site: @site, position: 0)
+  @page2 = Fabricate(:page, name: "About", site: @site, position: 1)
 end
 
 Given(/^I have 1 page$/) do
@@ -45,4 +45,15 @@ end
 Then 'I should see that my page is deleted' do
   current_path.should == admin_pages_path
   page.should_not have_content "Home"
+end
+
+When(/^I drag my second page above the first$/) do
+  @page1.update_attribute(:position, 1)
+  @page2.update_attribute(:position, 0)
+  visit current_path
+end
+
+Then(/^I should see that my pages are reordered$/) do
+  all(".reorder_view li")[0].text.should eq "About"
+  all(".reorder_view li")[1].text.should eq "Home"
 end

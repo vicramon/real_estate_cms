@@ -16,7 +16,11 @@ RealEstateCMS::Application.routes.draw do
 
   resources :admin, only: [:index]
   namespace :admin do
-    resources :pages
+    resources :pages do
+      get 'reorder', on: :collection
+      patch 'update_order', on: :collection
+    end
+
   end
 
   resources :pages, only: [:show]
