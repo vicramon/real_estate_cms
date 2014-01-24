@@ -1,8 +1,8 @@
 @import 'whitespace-reset'
 
 body
-  font-family: Helvetica
-  font-size: 15px
+  font-family: "Roboto", Helvetica
+  font-size: 14px
   line-height: 1.6
 
 body > header
@@ -51,22 +51,46 @@ input[type='text'], textarea, input[type='password']
   font-size: 15px
   padding: 2px
 
+input[type='submit']
+  font-weight: normal
+  padding: 8px 35px
+  color: white
+  background: #006DD9
+  border: none
+  font-family: "Roboto", Helvetica
+  font-size: 15px
+  cursor: pointer
+  &:hover
+    opacity: .85
+
+fieldset.actions
+  margin: 15px 0 0 0
+
 #container
   width: 80%
   margin: 20px auto 40px
   min-height: 300px
 
 section#admin
+  h1
+    font-size: 22px
+    padding-bottom: 10px
   .create_new
     float: right
-    a
-      font-weight: normal
-      background: #D90000
-      padding: 8px 35px
-      display: inline-block
-      color: white
-      &:hover
-        text-decoration: none
+    li
+      margin-bottom: 15px
+      a
+        text-align: center
+        font-weight: normal
+        background: #D90000
+        padding: 8px 35px
+        display: inline-block
+        width: 100px
+        color: white
+        &:hover
+          text-decoration: none
+        &.blue
+          background: #006DD9
 
 h2
   font-size: 19px
@@ -96,3 +120,15 @@ footer
   background: #222
   height: 150px
   color: #333
+
+ul.reorder_view
+  li
+    padding: 6px 0 8px 44px
+    cursor: pointer
+    color: #ddd
+    width: 220px
+    margin-bottom: 5px
+    background: url(icons/draggable.png) 6px center no-repeat
+    background-color: #333
+    &.ui-sortable-helper
+      opacity: .8

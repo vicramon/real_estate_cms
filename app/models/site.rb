@@ -4,6 +4,8 @@ class Site < ActiveRecord::Base
   has_many :pages
   scope :ordered, -> { order(:name) }
 
+  accepts_nested_attributes_for :pages
+
   def ordered_pages
     pages.ordered
   end

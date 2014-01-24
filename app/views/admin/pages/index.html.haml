@@ -1,5 +1,6 @@
 .create_new
-  = link_to "Add a Page", [:new, :admin, :page]
+  %li= link_to "Add a Page", [:new, :admin, :page]
+  %li= link_to "Reorder Pages", [:reorder, :admin, :pages], class: 'blue'
 
 %table
   %tr
