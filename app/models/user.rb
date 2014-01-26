@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   scope :ordered, -> { order("lower(first_name), lower(last_name)") }
 
   def admin_for(site)
-    admin? and self.site.id == site.id
+    (admin? and self.site.id == site.id) || super_admin?
   end
 
 end

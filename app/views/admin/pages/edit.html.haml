@@ -1,7 +1,5 @@
 %h1 Edit Page
-
 = render 'shared/flash'
-
 %h2.underline Page Info
 
 = form_for page, url: admin_page_path(page) do |f|
@@ -9,30 +7,28 @@
 
   %h2.underline Content Blocks
 
+  - if page.blocks.empty?
+    This page currently has no blocks.
+    = succeed "." do
+      = link_to "Create one", [:new, :admin, :block]
+    %br
+    %br
+
   = f.fields_for :blocks do |f|
     .block
+      = render 'block_form', f: f
 
-      %dl
-        %dt= f.label :header, "Header:"
-        %dd= f.text_field :header
-
-      %dl
-        %dt= f.label :subheader, "Subheader:"
-        %dd= f.text_field :subheader
-
-      %dl
-        %dt= f.label :text, "Text:"
-        %dd= f.text_area :text
-
-      %dl
-        %dt= f.label :image_url, "Add an image:"
-        %dd= f.filepicker_field :image_url, button_text: "Choose file", services: ['COMPUTER']
-
-      %dl
-        %dt= f.label :image_align, "Image alignment:"
-        %dd= f.select :image_align, [:right, :left], default: f.object.image_align
+      .delete
+        = link_to "Delete this block", [:admin, f.object], method: :delete,
+          data: { confirm: 'Are you sure you want to delete this block?' }
 
   %dl
     %dt
       %br
       = f.submit
+
+:javascript
+  $('.delete a').bind('ajax:complete', function() {
+    $(this).closest('.block').siblings('input').remove()
+    $(this).closest('.block').remove()
+  })

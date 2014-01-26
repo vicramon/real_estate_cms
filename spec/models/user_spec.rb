@@ -26,5 +26,12 @@ describe User do
       end
     end
 
+    context 'user is a super admin' do
+      let(:user) { Fabricate(:user, admin: false, super_admin: true) }
+      it 'returns true' do
+        user.admin_for(site).should == true
+      end
+    end
+
   end
 end

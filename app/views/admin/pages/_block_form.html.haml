@@ -1,0 +1,31 @@
+%dl
+  %dt= f.label :header, "Header:"
+  %dd= f.text_field :header
+
+%dl
+  %dt= f.label :subheader, "Subheader:"
+  %dd= f.text_field :subheader
+
+%dl
+  %dt= f.label :text, "Text:"
+  %dd= f.text_area :text
+
+%dl
+  %dt= f.label :image_url, "Add an image:"
+  %dd= f.filepicker_field :image_url, button_text: "Choose file",
+    services: ['COMPUTER'], onchange: 'showImage(event);'
+
+%dl{ style: ('display: none' unless f.object.image_url.present? ) }
+  %dt
+  %dd= filepicker_image_tag f.object.image_url
+
+%dl
+  %dt= f.label :image_align, "Image alignment:"
+  %dd= f.select :image_align, [:right, :left], default: f.object.image_align
+
+:javascript
+  showImage = function(event) {
+    $(event.target).closest('dl').siblings('dl').show()
+    var $img = $(event.target).closest('dl').next('dl').find('img')
+    $img.attr('src', event.fpfile.url)
+  }

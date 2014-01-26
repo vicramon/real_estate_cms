@@ -23,3 +23,7 @@ Given(/^I am a site admin$/) do
   @site = Fabricate(:site)
   @user = Fabricate(:admin, site: @site)
 end
+
+def have_css_wait
+  page.should have_css "nav li"
+end
