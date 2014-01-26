@@ -4,7 +4,7 @@ class Admin::PagesController < AdminController
 
   def create
     page.save
-    redirect_to edit_admin_page_path(page)
+    redirect_to edit_admin_page_path(page), notice: 'save'
   end
   alias update create
 
@@ -12,7 +12,7 @@ class Admin::PagesController < AdminController
 
   def destroy
     page.destroy
-    redirect_to admin_pages_path
+    redirect_to admin_pages_path, notice: 'save'
   end
 
   def update_order
@@ -23,7 +23,16 @@ class Admin::PagesController < AdminController
   private
 
   def page_params
-    params.require(:page).permit(:name)
+    params.require(:page).permit(
+      :name,
+      :header,
+      blocks_attributes: [:id,
+                          :header,
+                          :subheader,
+                          :text,
+                          :image_url,
+                          :image_align]
+    )
   end
 
   def site_params

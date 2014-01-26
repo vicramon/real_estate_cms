@@ -1,2 +1,38 @@
+%h1 Edit Page
+
+= render 'shared/flash'
+
+%h2.underline Page Info
+
 = form_for page, url: admin_page_path(page) do |f|
   = render 'form', f: f
+
+  %h2.underline Content Blocks
+
+  = f.fields_for :blocks do |f|
+    .block
+
+      %dl
+        %dt= f.label :header, "Header:"
+        %dd= f.text_field :header
+
+      %dl
+        %dt= f.label :subheader, "Subheader:"
+        %dd= f.text_field :subheader
+
+      %dl
+        %dt= f.label :text, "Text:"
+        %dd= f.text_area :text
+
+      %dl
+        %dt= f.label :image_url, "Add an image:"
+        %dd= f.filepicker_field :image_url, button_text: "Choose file", services: ['COMPUTER']
+
+      %dl
+        %dt= f.label :image_align, "Image alignment:"
+        %dd= f.select :image_align, [:right, :left], default: f.object.image_align
+
+  %dl
+    %dt
+      %br
+      = f.submit

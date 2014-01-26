@@ -63,6 +63,12 @@ input[type='submit']
   &:hover
     opacity: .85
 
+textarea
+  width: 500px
+  border-color: #ccc
+  border-width: 1px
+  height: 140px
+
 fieldset.actions
   margin: 15px 0 0 0
 
@@ -93,11 +99,18 @@ section#admin
           background: #006DD9
 
 h2
-  font-size: 19px
+  font-size: 18px
   margin-bottom: 8px
+  font-weight: normal
+  &.underline
+    border-bottom: 1px solid #ccc
+    padding-bottom: 2px
+    margin-bottom: 20px
 
 form
   padding-top: 15px
+  h2
+    padding: 15px 0 0 0
   dl
     padding-bottom: 12px
     dt, dd
@@ -107,6 +120,8 @@ form
       text-align: right
       display: inline-block
       padding-right: 3px
+      vertical-align: top
+
 
 table
   min-width: 300px
@@ -138,3 +153,9 @@ ul.reorder_view
   padding: 5px 15px 8px
   margin: 0 0 8px 0
   max-width: 400px
+
+.block
+  background: #F9F9F9
+  padding: 15px 25px
+  input[type='text']
+    width: 300px

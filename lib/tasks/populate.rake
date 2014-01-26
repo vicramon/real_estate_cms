@@ -47,10 +47,15 @@ namespace :db do
       Page.create(
         name: name,
         site: @site,
-        position: index
-      )
-
+        position: index)
     end
+
+    @page = Page.where(name: 'Home').first
+    Block.create(
+      page: @page,
+      header: 'A great header',
+      subheader: 'A great subheader',
+      text: 'Lorem ipsum lorem ipsum lorem ipsum')
 
   end
 

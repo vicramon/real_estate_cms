@@ -21,7 +21,8 @@ Then(/^I should see those pages$/) do
 end
 
 When(/^I fill in the page form$/) do
-  fill_in "Name:", with: "Company"
+  fill_in "Page Title:", with: "Company"
+  fill_in "Main Header Text:", with: "We're a company!"
   submit_form
 end
 
