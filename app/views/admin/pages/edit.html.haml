@@ -5,8 +5,9 @@
 = form_for page, url: admin_page_path(page) do |f|
   = render 'form', f: f
 
-  .create_new
+  .create_new.blocks
     %li= link_to "Add a Block", [:new, :admin, page, :block]
+    %li= link_to "Reorder Blocks", [:reorder, :admin, page, :blocks], class: 'orange'
 
   %h2.underline Content Blocks
 
@@ -17,7 +18,7 @@
     %br
     %br
 
-  = f.fields_for :blocks do |f|
+  = f.fields_for :blocks, page.blocks.ordered do |f|
     .block
       = render 'block_form', f: f
 

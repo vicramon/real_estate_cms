@@ -1,0 +1,12 @@
+%h1 Reorder Blocks
+= render 'shared/flash'
+
+= form_for page, url: update_order_admin_page_blocks_path do |f|
+  %ul.reorder_view
+    = f.fields_for :blocks, page.blocks.ordered do |f|
+      %li
+        %span.handle
+          = f.hidden_field :position
+          %p= f.object.header
+  %fieldset.actions
+    = f.submit "Save Changes"

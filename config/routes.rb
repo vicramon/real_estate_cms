@@ -19,7 +19,10 @@ RealEstateCMS::Application.routes.draw do
     resources :pages do
       get 'reorder', on: :collection
       patch 'update_order', on: :collection
-      resources :blocks, only: [:new, :create, :destroy]
+      resources :blocks, only: [:new, :create, :destroy] do
+        get 'reorder', on: :collection
+        patch 'update_order', on: :collection
+      end
     end
   end
 

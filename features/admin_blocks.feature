@@ -28,3 +28,13 @@ Feature: Admin blocks
     And I click to delete the block
     And I submit the form
     Then I should see that my block is deleted
+
+  Scenario: Admin reorders blocks
+    Given I am signed in as an admin
+    And I have 1 page
+    And I have 3 blocks
+    When I follow "Pages"
+    And I click to edit the first page
+    And I follow "Reorder Blocks"
+    And I reorder my blocks
+    Then I should see that my blocks are reordered

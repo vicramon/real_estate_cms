@@ -12,11 +12,20 @@ class Admin::BlocksController < AdminController
     redirect_to [:edit, :admin, block.page]
   end
 
+  def update_order
+    page.update_attributes(page_params)
+    redirect_to reorder_admin_page_blocks_path(page), notice: 'save'
+  end
+
   private
 
   def block_params
     params.require(:block).permit(:header, :subheader, :text,
       :image_url, :image_align, :page_id)
+  end
+
+  def page_params
+    params.require(:page).permit(blocks_attributes: [:id, :position])
   end
 
 end

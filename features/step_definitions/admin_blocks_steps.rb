@@ -47,3 +47,19 @@ Then(/^I should see that my block is persisted$/) do
   @block.text.should == 'sup text'
   @block.image_align.should == 'right'
 end
+
+Given(/^I have 3 blocks$/) do
+  @block1 = Fabricate(:block, header: 'Header 1', page: @page, position: 0)
+  @block2 = Fabricate(:block, header: 'Header 2', page: @page, position: 1)
+  @block3 = Fabricate(:block, header: 'Header 3', page: @page, position: 2)
+end
+
+When(/^I reorder my blocks$/) do
+  @block3.update_attribute(:position, 0)
+  @block1.update_attribute(:position, 2)
+end
+
+Then(/^I should see that my blocks are reordered$/) do
+  visit edit_admin_page_path(@page)
+  all('.block').first.all('input').first.value.should == 'Header 3'
+end
