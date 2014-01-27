@@ -3,6 +3,7 @@ class Page < ActiveRecord::Base
   has_many :blocks, dependent: :destroy
   scope :ordered, -> { order(:position) }
   accepts_nested_attributes_for :blocks
+  include ::PageDecorator
 
   before_save do
     self.slug = self.name.parameterize

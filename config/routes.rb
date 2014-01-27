@@ -1,6 +1,5 @@
 RealEstateCMS::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
-  resources :home, only: [:index]
 
   get 'sign_out', to: 'sessions#destroy', as: 'sign_out'
   get 'sign_in', to: 'sessions#new', as: 'sign_in'
@@ -28,6 +27,8 @@ RealEstateCMS::Application.routes.draw do
 
   resources :pages, only: [:show]
 
-  root to: 'pages#index'
+  get '*path', to: 'pages#show'
+
+  root to: 'pages#show'
 
 end
