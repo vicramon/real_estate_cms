@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def block_class(block)
+    if block.image_url.present?
+      "image_#{block.image_align}"
+    else
+      "no_image"
+    end
+  end
+
   def li_present(object, attribute)
     return nil unless object.send(attribute).present?
     content_tag('li') do

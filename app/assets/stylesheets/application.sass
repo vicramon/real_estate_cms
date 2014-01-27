@@ -1,7 +1,7 @@
-@import 'whitespace-reset'
+@import 'whitespace-reset', 'block'
 
 body
-  font-family: Helvetica
+  font-family: "Myriad Pro", Helvetica
   font-size: 15px
   line-height: 1.6
 
@@ -36,6 +36,7 @@ body > header
       margin: 0 20px 0 0
 
 nav#top
+  font-family: Helvetica
   margin-top: 15px
   border-top: 1px solid #ccc
   border-bottom: 1px solid #ccc
@@ -62,7 +63,9 @@ nav#top
   min-height: 300px
   .content
     padding: 0 20px
-
+    h1
+      font-size: 32px
+      margin: 0 0 14px 0
   form
     padding-top: 15px
     dl
@@ -83,7 +86,7 @@ footer
   .content
     margin: 0 auto
     padding: 20px
-    width: 80%
+    max-width: 900px
     nav
       max-width: 400px
       padding-top: 4px
