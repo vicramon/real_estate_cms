@@ -9,6 +9,15 @@ Feature: Admin blocks
     And I make changes to my first block
     Then those changes to my block should be persisted
 
+  Scenario: Admin adds a block
+    Given I am signed in as an admin
+    And I have 1 page
+    When I follow "Pages"
+    And I click to edit the first page
+    And I follow "Add a Block"
+    And I fill out the block form
+    Then I should see that my block is persisted
+
   @javascript
   Scenario: Admin deletes a block
     Given I am signed in as an admin

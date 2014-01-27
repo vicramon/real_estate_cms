@@ -31,3 +31,19 @@ When 'I click to delete the block' do
   click_link "Delete this block"
   have_css_wait
 end
+
+When(/^I fill out the block form$/) do
+  fill_in "Header:", with: 'sup header'
+  fill_in "Subheader:", with: 'sup subheader'
+  fill_in "Text:", with: 'sup text'
+  select 'right', from: 'Image alignment:'
+  submit_form
+end
+
+Then(/^I should see that my block is persisted$/) do
+  @block = Block.last
+  @block.header.should == 'sup header'
+  @block.subheader.should == 'sup subheader'
+  @block.text.should == 'sup text'
+  @block.image_align.should == 'right'
+end
