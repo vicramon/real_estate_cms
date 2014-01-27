@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
   belongs_to :site
-  has_many :blocks
+  has_many :blocks, dependent: :destroy
   scope :ordered, -> { order(:position) }
   accepts_nested_attributes_for :blocks
 
