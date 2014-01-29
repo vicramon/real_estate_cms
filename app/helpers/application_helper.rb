@@ -21,6 +21,7 @@ module ApplicationHelper
     else
       active = request.path.include?(path.to_s)
     end
+    active = true if path == "/home" && request.path == "/"
     active_class = active ? 'active' : nil
     content_tag('li', class: [active_class, link_options.delete(:li_class)].compact) do
       link_to text, path, link_options
