@@ -8,6 +8,9 @@ body
 li
   list-style-type: none
 
+.clear_both
+  clear: both
+
 a
   color: #0000EE
   text-decoration: none
@@ -21,62 +24,34 @@ input[type='text'], textarea, input[type='password']
   font-size: 15px
   padding: 2px
 
-body > header, nav#top
-  width: 80%
-  margin: 0 auto
-
-body > header
-  margin-top: 22px
+header
   .logo
-    padding-left: 20px
   #social_icons
-    float: right
-    margin-top: -3px
-    a
-      margin: 0 20px 0 0
 
 nav#top
-  font-family: Helvetica
-  margin-top: 15px
-  border-top: 1px solid #ccc
-  border-bottom: 1px solid #ccc
-  text-align: left
-  li
-    display: inline-block
-    text-align: center
-    a
-      padding: 8px 20px
-      display: inline-block
-      text-transform: uppercase
-      color: #333
-      &:hover
-        background: #BFEFFF
-        text-decoration: none
-    &.active
-      a
-        background: #BFEFFF
-        text-decoration: none
 
 #container
   width: 80%
   margin: 20px auto 40px
   min-height: 300px
-  .content
-    padding: 0 20px
-    h1
-      font-size: 32px
-      margin: 0 0 14px 0
-  form
-    padding-top: 15px
-    dl
-      padding-bottom: 12px
-      dt, dd
-        display: inline-block
-      dt
-        width: 140px
-        text-align: right
-        display: inline-block
-        padding-right: 3px
+
+.content
+  padding: 0 20px
+  h1
+    font-size: 32px
+    margin: 0 0 14px 0
+
+form
+  padding-top: 15px
+  dl
+    padding-bottom: 12px
+    dt, dd
+      display: inline-block
+    dt
+      width: 140px
+      text-align: right
+      display: inline-block
+      padding-right: 3px
 
 footer
   background: #DDDDDD
@@ -102,6 +77,3 @@ footer
       .logo
         img
           width: 250px
-
-.clear_both
-  clear: both

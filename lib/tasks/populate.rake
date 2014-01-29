@@ -21,10 +21,44 @@ namespace :db do
         super_admin: true)
     end
 
+    def create_pages_for(site)
+      pages = ['Home', 'Neighborhoods', 'Property Search', 'Services', 'Company']
+
+      pages.each_with_index do |name, index|
+        Page.create(name: name, site: site, position: index)
+      end
+
+      @page = Page.where(name: 'Home').last
+
+      Block.create(
+        page: @page,
+        header: 'A Standard Header',
+        subheader: 'A Standard Subheader',
+        text: 'Lorem ipsum lorem ipsum lorem ipsum'
+      )
+    end
+
     domain = Rails.env.development? ? 'localhost' : 'herokuapp.com'
+
+    @site = Site.create(
+      name: 'Redwood Pro Realty',
+      domain: domain,
+      stylesheet_name: 'redwood',
+      email: 'contact@redwoodprorealty.com',
+      address: '1234 Forest Lane',
+      city: 'Menlo Park',
+      state: 'CA',
+      zip: '90456',
+      header_type: 'right',
+      logo_url: 'https://www.filepicker.io/api/file/khot6jcwRvmdl4TAzK5n/convert?',
+      phone: '(512) - 445 - 5555')
+    create_pages_for(@site)
+
     @site = Site.create(
       name: 'Blue Mountain Realty',
-      domain: domain,
+      domain: 'bluemountainprorealty.com',
+      header_type: 'standard',
+      stylesheet_name: 'blue_mountain',
       email: 'contact@bluemountainrealty.com',
       address: '1234 Maple Lane',
       city: 'Austin',
@@ -35,27 +69,7 @@ namespace :db do
       google_plus_url: 'https://plus.google.com/+VicRamon/',
       logo_url: 'https://www.filepicker.io/api/file/gDdFoNg0T4GuU8ZHWRxP/convert?',
       phone: '(512) - 445 - 5555')
-
-    pages = ['Home',
-             'Neighborhoods',
-             'Property Search',
-             'Buyers',
-             'Sellers',
-             'About']
-
-    pages.each_with_index do |name, index|
-      Page.create(
-        name: name,
-        site: @site,
-        position: index)
-    end
-
-    @page = Page.where(name: 'Home').first
-    Block.create(
-      page: @page,
-      header: 'A great header',
-      subheader: 'A great subheader',
-      text: 'Lorem ipsum lorem ipsum lorem ipsum')
+    create_pages_for(@site)
 
   end
 
