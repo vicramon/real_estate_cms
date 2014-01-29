@@ -15,6 +15,10 @@
     %dd= f.text_field :stylesheet_name
 
   %dl
+    %dt= f.label :header_type, "Header type:"
+    %dd= f.select :header_type, ['standard', 'nav_right']
+
+  %dl
     %dt= f.label :email, "Email:"
     %dd= f.text_field :email
 

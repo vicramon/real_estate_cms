@@ -8,18 +8,7 @@
     = csrf_meta_tags
 
   %body
-    %header
-
-      #social_icons
-        = render 'pages/social_icons'
-
-      .logo
-        = link_to :root do
-          = filepicker_image_tag site.logo_url
-
-    %nav#top
-      - site.ordered_pages.each do |page|
-        = li_link_to page.name, page.path
+    = render "headers/#{site.header_type}"
 
     #container
       .content
