@@ -46,7 +46,8 @@ namespace :db do
       ['https://www.filepicker.io/api/file/8tOp8TPhQOOp6pMPg6M0',
        'https://www.filepicker.io/api/file/jGscHQawSCyY3ur6W5dz',
        'https://www.filepicker.io/api/file/v1q0SYClTO2k5TXzZj8C/convert?',
-       'https://www.filepicker.io/api/file/pQwNEL4rRleDYaWf6b4z/convert?'].sample
+       'https://www.filepicker.io/api/file/pQwNEL4rRleDYaWf6b4z/convert?',
+        nil].sample
     end
 
     def create_blocks_for(site)
