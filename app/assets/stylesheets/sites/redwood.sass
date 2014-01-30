@@ -3,9 +3,12 @@ body
   color: #777
   font-size: 14px
 
+#container, header, footer
+  width: 85%
+  margin: 20px auto 40px
+
 header
-  width: 80%
-  margin: 15px auto 0 auto
+  margin: 18px auto 0 auto
 
   .logo
     display: inline-block
@@ -19,15 +22,18 @@ header
       a
         font-family: 'PT Sans Caption', Helvetica
         font-size: 15px
-        color: #444
+        color: #434343
         text-transform: uppercase
-        padding: 8px 4px 0 0
+        padding: 8px 4px 0
         &:hover
           border-top: 2px solid #EE3B36
           text-decoration: none
     li.active a
       border-top: 2px solid #EE3B36
       text-decoration: none
+
+#container
+  margin: 20px auto 40px
 
 #container .content
   padding: 0
@@ -43,7 +49,7 @@ header
     border-bottom: 3px solid #DADADA
 
 .block
-  padding: 18px 25px 32px
+  padding: 18px 25px 25px
   h1
     font-size: 22px
     font-family: 'PT Sans Caption', Helvetica
@@ -58,3 +64,17 @@ header
 
 .block.no_image
   max-width: 100%
+
+footer
+  color: #999
+  font-family: "Helvetica Neue"
+  font-size: 15px
+  background: url('redwood/footer.png') center center no-repeat
+  height: 260px
+  background-color: #111112
+  h1
+    color: white
+  nav li a
+    color: #999
+  .content
+    padding-top: 45px
