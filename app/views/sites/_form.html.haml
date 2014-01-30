@@ -1,0 +1,71 @@
+= link_to "&laquo; Back to sites".html_safe, :sites
+
+= form_for site do |f|
+
+  %dl
+    %dt= f.label :name, "Name:"
+    %dd= f.text_field :name
+
+  %dl
+    %dt= f.label :domain, "Domain:"
+    %dd= f.text_field :domain
+
+  %dl
+    %dt= f.label :stylesheet_name, "Stylesheet name:"
+    %dd= f.text_field :stylesheet_name
+
+  %dl
+    %dt= f.label :header_type, "Header type:"
+    %dd= f.select :header_type, ['standard', 'nav_right']
+
+  %dl
+    %dt= f.label :email, "Email:"
+    %dd= f.text_field :email
+
+  %dl
+    %dt= f.label :address, "Address:"
+    %dd= f.text_field :address
+
+  %dl
+    %dt= f.label :city, "City:"
+    %dd= f.text_field :city
+
+  %dl
+    %dt= f.label :state, "State:"
+    %dd= f.text_field :state
+
+  %dl
+    %dt= f.label :zip, "Zip:"
+    %dd= f.text_field :zip
+
+  %dl
+    %dt= f.label :phone, "Phone:"
+    %dd= f.text_field :phone
+
+  %dl
+    %dt= f.label :fax, "Fax:"
+    %dd= f.text_field :fax
+
+  %dl
+    %dt= f.label :twitter, "Twitter Handle:"
+    %dd= f.text_field :twitter
+
+  %dl
+    %dt= f.label :facebook_url, "Facebook URL:"
+    %dd= f.text_field :facebook_url
+
+  %dl
+    %dt= f.label :google_plus_url, "Google Plus URL:"
+    %dd= f.text_field :google_plus_url
+
+  %dl
+    %dt= f.label :logo_url, "Upload a logo:"
+    %dd= f.filepicker_field :logo_url, services: ['COMPUTER'], onchange: 'showLogo(event)'
+
+  %dl{ style: ('display: none' unless f.object.image_url.present? ) }
+    %dt
+    %dd= filepicker_image_tag f.object.logo_url
+
+  %dl
+    %dt= label_tag nil
+    %dd= f.submit

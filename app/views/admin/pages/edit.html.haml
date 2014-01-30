@@ -1,0 +1,38 @@
+%h1 Edit Page
+= render 'shared/flash'
+%h2.underline Page Info
+
+= form_for page, url: admin_page_path(page) do |f|
+  = render 'form', f: f
+
+  .create_new.blocks
+    %li= link_to "Add a Block", [:new, :admin, page, :block]
+    %li= link_to "Reorder Blocks", [:reorder, :admin, page, :blocks], class: 'orange'
+
+  %h2.underline Content Blocks
+
+  - if page.blocks.empty?
+    This page currently has no blocks.
+    = succeed "." do
+      = link_to "Create one", [:new, :admin, page, :block]
+    %br
+    %br
+
+  = f.fields_for :blocks, page.blocks.ordered do |f|
+    .block
+      = render 'block_form', f: f
+
+      .delete
+        = link_to "Delete this block", [:admin, page, f.object], method: :delete,
+          data: { confirm: 'Are you sure you want to delete this block?' }
+
+  %dl
+    %dt
+      %br
+      = f.submit "Save Changes"
+
+:javascript
+  $('.delete a').bind('ajax:complete', function() {
+    $(this).closest('.block').siblings('input').remove()
+    $(this).closest('.block').remove()
+  })

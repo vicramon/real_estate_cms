@@ -38,8 +38,17 @@ namespace :db do
       )
     end
 
-    domain = Rails.env.development? ? 'localhost' : 'herokuapp.com'
+    def create_agents_for(site)
+      agents = ['John Smith', 'Tim McGood', 'Sam Thompson']
 
+      agents.each do |name|
+        name = name.split(" ")
+        Fabricate(:user, site: site, first_name: name.first,
+          last_name: name.last, email: "#{name.first}@example.com")
+      end
+    end
+
+    domain = Rails.env.development? ? 'localhost' : 'redwoodprorealty.com'
     @site = Site.create(
       name: 'Redwood Pro Realty',
       domain: domain,
@@ -53,10 +62,11 @@ namespace :db do
       logo_url: 'https://www.filepicker.io/api/file/khot6jcwRvmdl4TAzK5n/convert?',
       phone: '(512) - 445 - 5555')
     create_pages_for(@site)
+    create_agents_for(@site)
 
     @site = Site.create(
       name: 'Blue Mountain Realty',
-      domain: 'bluemountainprorealty.com',
+      domain: 'herokuapp.com',
       header_type: 'standard',
       stylesheet_name: 'blue_mountain',
       email: 'contact@bluemountainrealty.com',

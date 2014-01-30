@@ -1,0 +1,35 @@
+= link_to "&laquo; Back to users".html_safe, :users
+
+= form_for user do |f|
+
+  %dl
+    %dt= f.label :first_name, "First Name:"
+    %dd= f.text_field :first_name
+
+  %dl
+    %dt= f.label :last_name, "Last Name:"
+    %dd= f.text_field :last_name
+
+  %dl
+    %dt= f.label :email, "Email:"
+    %dd= f.text_field :email
+
+  %dl
+    %dt= f.label :password, "Password:"
+    %dd= f.text_field :password
+
+  %dl
+    %dt= f.label :site_id, "Site:"
+    %dd= f.collection_select :site_id, sites, :id, :name
+
+  %dl
+    %dt= f.label :admin, "Admin:"
+    %dd= f.check_box :admin
+
+  %dl
+    %dt= f.label :super_admin, "Super Admin:"
+    %dd= f.check_box :super_admin
+
+  %dl
+    = label_tag nil
+    = f.submit

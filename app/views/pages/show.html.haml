@@ -1,0 +1,15 @@
+%h1= page.header
+
+- blocks.each do |block|
+
+  .block{ class: block_class(block) }
+
+    - if block.image_url.present?
+      = image_tag block.image_url
+
+    .copy
+      %h1= block.header
+      %h2= block.subheader
+      = block.text
+
+.clear_both

@@ -1,0 +1,9 @@
+%h1 Edit Agent
+= render 'shared/flash'
+
+= form_for agent, url: admin_agent_path(agent) do |f|
+  = render 'form', f: f
+
+  %dl
+    %dt= label_tag nil
+    %dd= f.submit "Save Changes"

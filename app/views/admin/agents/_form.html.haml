@@ -1,0 +1,24 @@
+%dl
+  %dt= f.label :first_name, "First Name:"
+  %dd= f.text_field :first_name
+
+%dl
+  %dt= f.label :last_name, "Last Name:"
+  %dd= f.text_field :last_name
+
+%dl
+  %dt= f.label :title, "Title:"
+  %dd= f.text_field :title
+
+%dl
+  %dt= f.label :bio, "Bio:"
+  %dd= f.text_area :bio
+
+%dl
+  %dt= f.label :image_url, "Add a Photo:"
+  %dd= f.filepicker_field :image_url, button_text: "Choose image",
+    services: ['COMPUTER'], onchange: 'showImage(event);'
+
+%dl{ style: ('display: none' unless f.object.image_url.present? ) }
+  %dt
+  %dd= filepicker_image_tag f.object.image_url

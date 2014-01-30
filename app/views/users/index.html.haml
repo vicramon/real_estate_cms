@@ -1,0 +1,20 @@
+%h2 Users
+
+.create_new
+  = link_to "Create New User", [:new, :user]
+
+%table
+  %tr
+    %th Name
+    %th Site
+    %th Admin
+    %th Super Admin
+    %th
+  - users.each do |user|
+    %tr
+      %td= link_to user.name, user
+      %td= user.pretty_site
+      %td= user.admin?
+      %td= user.super_admin?
+      %td= link_to "delete", user, method: :delete, class: 'delete',
+        data: { confirm: 'Are you sure you want to delete this user?' }

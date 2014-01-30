@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title #{site.name} | Admin
+    = stylesheet_link_tag    "admin"
+    = javascript_include_tag "application"
+    = filepicker_js_include_tag
+    = csrf_meta_tags
+
+  %body
+    %header
+      %h1
+        = site.name
+        .grey Admin
+
+    %nav
+      = li_link_to "Pages", admin_pages_path
+      = li_link_to "Agents", admin_agents_path
+      = li_link_to "Settings", '#'
+      = li_link_to "Visit Site", :root
+      = li_link_to "Sign Out", sign_out_path
+
+    #container
+      .content
+        %section#admin
+          .admin_content
+            = yield
