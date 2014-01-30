@@ -4,7 +4,7 @@
 
   %dl
     %dt= f.label :page_id, "Page:"
-    %dd= f.collection_select :page_id, site.pages.order(:name), :id, :name, selected: page.id
+    %dd= f.collection_select :page_id, site.pages.order(:name), :id, :name, { selected: page.id }
 
   = render 'admin/pages/block_form', f: f
 

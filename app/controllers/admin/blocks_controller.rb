@@ -1,5 +1,5 @@
 class Admin::BlocksController < AdminController
-  expose(:page, finder: :find_by_slug)
+  expose(:page) { current_site.pages.find_by_slug(params[:page_id]) }
   expose(:block, attributes: :block_params)
 
   def create

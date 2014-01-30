@@ -60,9 +60,9 @@
 
   %dl
     %dt= f.label :logo_url, "Upload a logo:"
-    %dd= f.filepicker_field :logo_url, services: ['COMPUTER'], onchange: 'showLogo(event)'
+    %dd= f.filepicker_field :logo_url, services: ['COMPUTER'], onchange: 'showImage(event)'
 
-  %dl{ style: ('display: none' unless f.object.image_url.present? ) }
+  %dl{ style: ('display: none' unless f.object.logo_url.present? ) }
     %dt
     %dd= filepicker_image_tag f.object.logo_url
 
