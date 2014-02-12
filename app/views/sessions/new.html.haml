@@ -1,19 +1,22 @@
-%article#login
-  %h2 Login
+.block.no_image
+  .copy
+    %h1 Login
 
-  - if flash[:alert]
-    .alert= flash[:alert]
+    %article#login
 
-  = form_tag sessions_path do
+      - if flash[:alert]
+        .alert= flash[:alert]
 
-    %dl
-      %dt= label_tag :email, "Email:"
-      %dd= text_field_tag :email
+      = form_tag sessions_path do
 
-    %dl
-      %dt= label_tag :password, "Password:"
-      %dd= password_field_tag :password
+        %dl
+          %dt= label_tag :email, "Email:"
+          %dd= text_field_tag :email
 
-    %dl
-      %dt
-      %dd= submit_tag "Sign In"
+        %dl
+          %dt= label_tag :password, "Password:"
+          %dd= password_field_tag :password
+
+        %dl
+          %dt
+          %dd= submit_tag "Sign In"
