@@ -16,7 +16,11 @@
 
   %dl
     %dt= f.label :header_type, "Header type:"
-    %dd= f.select :header_type, ['standard', 'nav_right']
+    %dd= f.select :header_type, ['standard', 'right']
+
+  %dl
+    %dt= f.label :footer_type, "Footer type:"
+    %dd= f.select :footer_type, ['links_contact', 'contact_location']
 
   %dl
     %dt= f.label :email, "Email:"

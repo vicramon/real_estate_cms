@@ -1,0 +1,15 @@
+%footer
+  .content
+
+    .right
+      %h1 Location
+      .info
+        %li= site.address
+        %li= site.city_state_zip
+
+    .left
+      %h1 Contact
+      .info
+        = li_present site, 'phone'
+        = li_present site, 'fax'
+        = li_present site, 'email'
